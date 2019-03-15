@@ -10,21 +10,24 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>Bullhorn App</h1>
-    <a href="/add">Add a message</a>
-    <br/>
-    <div th:each="message : ${messages}">
-        <div th:if="${message.headshot}" != null>
-            <img th:src="${message.headshot}" alt="headshot"/>
-            <hr/>
-        </div>
-        <h3 th:text="${message.name}"></h3>
-        <h4 th:text="${message.content}"></h4>
+    <div class="container" style="text-align: center;">
+        <h1>Bullhorn App</h1>
+        <a href="/add" type="button" class="btn btn-success" style="margin-bottom: 5px;">Add a message</a>
+        <br/>
+        <div th:each="message : ${messages}">
+            <div th:if="${message.headshot}" != null>
+                <img th:src="${message.headshot}" alt="headshot" style="width: 500px;"/>
+                <hr/>
+            </div>
+            <h3 th:text="${message.name}"></h3>
+            <h4 th:text="${message.content}"></h4>
 
-        <a th:href="@{/update/{id}(id=${message.id})}">Update</a> -
-        <a th:href="@{/detail/{id}(id=${message.id})}">Details</a> -
-        <a th:href="@{/delete/{id}(id=${message.id})}">Delete</a>
+            <a th:href="@{/update/{id}(id=${message.id})}" type="button" class="btn btn-primary" style="margin-bottom: 5px;">Update</a> -
+            <a th:href="@{/detail/{id}(id=${message.id})}" type="button" class="btn btn-secondary" style="margin-bottom: 5px;">Details</a> -
+            <a th:href="@{/delete/{id}(id=${message.id})}" type="button" class="btn btn-danger" style="margin-bottom: 5px;">Delete</a>
+        </div>
     </div>
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

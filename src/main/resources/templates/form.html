@@ -10,17 +10,17 @@
     <title>Title</title>
 </head>
 <body>
-    <br/>
-    <br/>
-    <h1>Bullhorn App</h1>
-    <form action="#" th:action="@{/process}" method="POST" th:object="${message}" enctype="multipart/form-data">
-        Name: <input type="text" th:field="*{name}"/>
-        Message: <input type="text" th:field="*{content}"/>
-        <input type="file" name="file"/>
-        <br/>
-        <br/>
-        <input type="submit" value="Submit"/>
-    </form>
+    <div class="container" style="text-align: center;">
+        <h1>Bullhorn App</h1>
+        <form action="#" th:action="@{/process}" method="POST" th:object="${message}" enctype="multipart/form-data">
+            Name: <input type="text" th:field="*{name}"/>
+            Message: <input type="text" th:field="*{content}"/>
+            <input type="file" name="file"/>
+            <br/>
+            <br/>
+            <input type="submit" value="Submit"/>
+        </form>
+    </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
