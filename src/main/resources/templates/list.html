@@ -10,15 +10,15 @@
     <title>Title</title>
 </head>
 <body>
-
-    <a href="/add">Add an actor</a>
-        <div th:each="actor : ${actors}">
-            <div th:if="${actor.headshot}" != null>
-                <img th:src="${actor.headshot}" alt="headshot"/>
+    <h1>Bullhorn App</h1>
+    <a href="/add">Add a message</a>
+        <div th:each="message : ${messages}">
+            <div th:if="${message.headshot}" != null>
+                <img th:src="${message.headshot}" alt="headshot"/>
                 <hr/>
             </div>
-            <h3 th:text="${actor.name}"></h3>
-            <h4 th:text="${actor.realname}"></h4>
+            <h3 th:text="${message.name}"></h3>
+            <h4 th:text="${message.content}"></h4>
         </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

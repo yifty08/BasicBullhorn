@@ -1,4 +1,4 @@
-package com.example.springboot503;
+package com.example.bullhorn;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class Springboot503ApplicationTests {
+public class BullhornApplicationTests {
 
 	@Test
 	public void contextLoads() {

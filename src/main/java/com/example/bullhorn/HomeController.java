@@ -1,4 +1,4 @@
-package com.example.springboot503;
+package com.example.bullhorn;
 
 import com.cloudinary.utils.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,33 +13,33 @@ import java.util.Map;
 @Controller
 public class HomeController {
     @Autowired
-    ActorRepository actorRepository;
+    MessageRepository messageRepository;
 
     @Autowired
     CloudinaryConfig cloudc;
 
     @RequestMapping("/")
     public String listActors(Model model) {
-        model.addAttribute("actors", actorRepository.findAll());
+        model.addAttribute("messages", messageRepository.findAll());
         return "list";
     }
 
     @GetMapping("/add")
     public String newActor(Model model) {
-        model.addAttribute("actor", new Actor());
+        model.addAttribute("message", new Message());
         return "form";
     }
 
     @PostMapping("/add")
-    public String processActor(@ModelAttribute Actor actor, @RequestParam("file") MultipartFile file) {
+    public String processActor(@ModelAttribute Message message, @RequestParam("file") MultipartFile file) {
         if (file.isEmpty()) {
             return "redirect:/add";
         }
         try {
             Map uploadResult = cloudc.upload(file.getBytes(),
                     ObjectUtils.asMap("resourcetype", "auto"));
-            actor.setHeadshot(uploadResult.get("url").toString());
-            actorRepository.save(actor);
+            message.setHeadshot(uploadResult.get("url").toString());
+            messageRepository.save(message);
         } catch (IOException e) {
             e.printStackTrace();
             return "redirect:/add";

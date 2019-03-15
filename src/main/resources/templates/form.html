@@ -12,14 +12,14 @@
 <body>
     <br/>
     <br/>
-    <h1>Spring Boot file upload example</h1>
-    <form action="/add" method="POST" th:object="${actor}" enctype="multipart/form-data">
+    <h1>Bullhorn App</h1>
+    <form action="/add" method="POST" th:object="${message}" enctype="multipart/form-data">
         Name: <input type="text" th:field="*{name}"/>
-        Real Name: <input type="text" th:field="*{realname}"/>
+        Message: <input type="text" th:field="*{content}"/>
         <input type="file" name="file"/>
         <br/>
         <br/>
-        Name: <input type="submit" value="Submit"/>
+        <input type="submit" value="Submit"/>
     </form>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
