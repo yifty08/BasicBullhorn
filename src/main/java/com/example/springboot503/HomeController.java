@@ -20,7 +20,7 @@ public class HomeController {
 
     @RequestMapping("/")
     public String listActors(Model model) {
-        model.addAttribute("actor", actorRepository.findAll());
+        model.addAttribute("actors", actorRepository.findAll());
         return "list";
     }
 
